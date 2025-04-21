@@ -133,12 +133,6 @@ a:hover {
   color: #d3f4c3;
 }
 
-.scroll-down {
-  font-size: 2rem;
-  animation: bounce 2s infinite;
-  margin-top: 1rem;
-}
-
 .scroll-up {
   position: fixed;
   right: 2rem;
@@ -152,7 +146,9 @@ a:hover {
 }
 
 .scroll-up:hover {
-  color: #d3f4c3;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  margin-top: 1rem;
 }
 
 /* Bouncy animation */
