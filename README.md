@@ -13,7 +13,7 @@ This app is designed for small teams or individuals who need to track items, qua
 - Visual alerts for low-stock items
 - Audit trail logs all inventory changes with user role and timestamps
 
-## 🎯 Capstone Enhancements
+## Capstone Enhancements
 
 This project was enhanced in three key areas to demonstrate core computer science competencies:
 
@@ -41,9 +41,9 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 - **Tools:** Android Studio, Git, GitHub
 - **Version Control:** Git with feature branches for enhancements
 
-## 🧰 Tools & Installation
+## Tools & Installation
 
-### 🔧 Required Software
+### Required Software
 
 | Tool | Description |
 |------|-------------|
@@ -53,7 +53,7 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 | Android Emulator or Device | Minimum API 21 (Android 5.0) |
 
 
-### 📦 Installation Steps
+### Installation Steps
 
 ```bash
 # Clone the repository
