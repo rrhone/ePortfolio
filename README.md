@@ -8,3 +8,151 @@
 - Description
 - Links
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasean Rhone | CS499 Capstone ePortfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #d8f3dc; /* Light green background */
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #081c15; /* Deep green */
+      color: #ffffff;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h3, h4 {
+      color: #1b4332;
+    }
+
+    a {
+      color: #40916c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #081c15;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rasean Rhone</h1>
+    <h2>CS499 Capstone ePortfolio</h2>
+    <nav>
+      <ul>
+        <li><a href="#overview">Professional Self-Assessment</a></li>
+        <li><a href="#software-design">Software Design & Engineering</a></li>
+        <li><a href="#algorithms">Algorithms & Data Structures</a></li>
+        <li><a href="#databases">Database Design</a></li>
+        <li><a href="#code-review">Code Review</a></li>
+        <li><a href="#outcomes">Program Outcomes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview">
+      <h3>Professional Self-Assessment</h3>
+      <p><!-- Describe your academic journey, skill development, and career goals. Include your growth in software engineering, problem solving, and professional responsibilities. --></p>
+    </section>
+
+    <section id="software-design">
+      <h3>Software Design & Engineering</h3>
+      <h4>Original Artifact</h4>
+      <p><!-- Describe original version of the software design implementation --></p>
+      <h4>Enhanced Artifact</h4>
+      <p><!-- Describe enhancements you made (e.g., role-based access, modular architecture) --></p>
+      <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
+    </section>
+
+    <section id="algorithms">
+      <h3>Algorithms & Data Structures</h3>
+      <h4>Original Artifact</h4>
+      <p><!-- Describe the initial algorithmic problem you tackled --></p>
+      <h4>Enhanced Artifact</h4>
+      <p><!-- Describe improvements such as sorting, searching, or logic optimization --></p>
+      <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
+    </section>
+
+    <section id="databases">
+      <h3>Database Design & Management</h3>
+      <h4>Original Artifact</h4>
+      <p><!-- Describe the original database schema or feature --></p>
+      <h4>Enhanced Artifact</h4>
+      <p><!-- Describe enhancements (e.g., Room persistence, audit trail, optimization) --></p>
+      <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
+    </section>
+
+    <section id="code-review">
+      <h3>Code Review</h3>
+      <p><!-- Insert code snippet or video link with your review commentary --></p>
+      <p><a href="LINK_TO_REVIEW_VIDEO">Watch Review</a> (if applicable)</p>
+    </section>
+
+    <section id="outcomes">
+      <h3>Program Outcomes Reflection</h3>
+      <ul>
+        <li><strong>Software Engineering & Design:</strong> <!-- Reflection --> </li>
+        <li><strong>Algorithms & Data Structures:</strong> <!-- Reflection --> </li>
+        <li><strong>Databases:</strong> <!-- Reflection --> </li>
+        <li><strong>Security, Legal & Ethical:</strong> <!-- Reflection --> </li>
+        <li><strong>Professional Communication:</strong> <!-- Reflection --> </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rasean Rhone | Built with HTML & GitHub Pages</p>
+  </footer>
+</body>
+</html>
+
