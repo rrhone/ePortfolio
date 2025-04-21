@@ -1,8 +1,7 @@
 
-# EZ Inventory Mobile App
+# Capstone Project
 
-An Android-based inventory management application built for my CS499 Capstone Project at Southern New Hampshire University.  
-This app is designed for small teams or individuals who need to track items, quantities, and updates in a local and role-aware system.
+This repository contains my files and documents for development of my ePortfolio for my CS-499 Computer Science Capstone course final project. The creation of this professional portfolio showcases my skills, abilities, and strengths learned and grown throughout my Computer Science program at Southern New Hampshire University. I have selected a project to inmprove on and document my growth within the Computer Science Program by showcasing my knowledge and abilities in three categories: **Software Design & Engineering**, **Algorithms & Data Structure**, and **Databases**.
 
 ## Features
 
