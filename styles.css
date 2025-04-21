@@ -52,7 +52,27 @@ body {
   background: #d3f4c3;
 }
 
-/* Hero Section */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #a4d7b5;
+  color: #1e2f27;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: #8ac7a1;
+  color: #ffffff;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
