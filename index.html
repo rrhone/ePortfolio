@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rasean Rhone | CS499 Capstone ePortfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rasean Rhone | ePortfolio</title>
   <style>
+    :root {
+      --sonoma-green: #2d4739;
+      --soft-white: #fdfdfd;
+      --content-bg: #ffffff;
+      --link-color: #d3f4c3;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #d8f3dc; /* Light green background */
-      color: #333;
       margin: 0;
-      padding: 0;
+      background-color: var(--sonoma-green);
+      color: var(--soft-white);
     }
 
     header {
-      background-color: #081c15; /* Deep green */
-      color: #ffffff;
-      padding: 20px 40px;
+      background-color: var(--sonoma-green);
+      color: var(--soft-white);
       text-align: center;
+      padding: 40px 20px 20px;
     }
 
     header h1 {
-      margin-bottom: 5px;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    header h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: #a4d7b5;
+    }
+
+    nav {
       display: flex;
       justify-content: center;
+      background-color: #244034;
+      padding: 12px 0;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
-    nav ul li a {
-      color: #ffffff;
+    nav a {
+      color: var(--soft-white);
       text-decoration: none;
+      margin: 0 15px;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
-    nav ul li a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: var(--link-color);
     }
 
     main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: var(--content-bg);
+      color: #111;
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     section {
       margin-bottom: 40px;
     }
 
-    h3, h4 {
-      color: #1b4332;
+    h3 {
+      color: var(--sonoma-green);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
 
     a {
-      color: #40916c;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #081c15;
-      color: #ffffff;
+      color: var(--sonoma-green);
     }
   </style>
 </head>
@@ -77,71 +86,54 @@
   <header>
     <h1>Rasean Rhone</h1>
     <h2>CS499 Capstone ePortfolio</h2>
-    <nav>
-      <ul>
-        <li><a href="#overview">Professional Self-Assessment</a></li>
-        <li><a href="#software-design">Software Design & Engineering</a></li>
-        <li><a href="#algorithms">Algorithms & Data Structures</a></li>
-        <li><a href="#databases">Database Design</a></li>
-        <li><a href="#code-review">Code Review</a></li>
-        <li><a href="#outcomes">Program Outcomes</a></li>
-      </ul>
-    </nav>
   </header>
 
+  <nav>
+    <a href="#self">Professional Self-Assessment</a>
+    <a href="#design">Software Design & Engineering</a>
+    <a href="#algorithms">Algorithms & Data Structures</a>
+    <a href="#database">Database Design</a>
+    <a href="#review">Code Review</a>
+    <a href="#outcomes">Program Outcomes</a>
+  </nav>
+
   <main>
-    <section id="overview">
+    <section id="self">
       <h3>Professional Self-Assessment</h3>
-      <p><!-- Describe your academic journey, skill development, and career goals. Include your growth in software engineering, problem solving, and professional responsibilities. --></p>
+      <p>[Insert your reflection essay or summary here]</p>
     </section>
 
-    <section id="software-design">
+    <section id="design">
       <h3>Software Design & Engineering</h3>
-      <h4>Original Artifact</h4>
-      <p><!-- Describe original version of the software design implementation --></p>
-      <h4>Enhanced Artifact</h4>
-      <p><!-- Describe enhancements you made (e.g., role-based access, modular architecture) --></p>
+      <p><strong>Original Artifact:</strong> [Describe your starting point]</p>
+      <p><strong>Enhanced Artifact:</strong> [Describe changes made and impact]</p>
       <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
     </section>
 
     <section id="algorithms">
       <h3>Algorithms & Data Structures</h3>
-      <h4>Original Artifact</h4>
-      <p><!-- Describe the initial algorithmic problem you tackled --></p>
-      <h4>Enhanced Artifact</h4>
-      <p><!-- Describe improvements such as sorting, searching, or logic optimization --></p>
+      <p><strong>Original Artifact:</strong> [Describe algorithm usage or issues]</p>
+      <p><strong>Enhanced Artifact:</strong> [Highlight improvements and methods]</p>
       <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
     </section>
 
-    <section id="databases">
-      <h3>Database Design & Management</h3>
-      <h4>Original Artifact</h4>
-      <p><!-- Describe the original database schema or feature --></p>
-      <h4>Enhanced Artifact</h4>
-      <p><!-- Describe enhancements (e.g., Room persistence, audit trail, optimization) --></p>
+    <section id="database">
+      <h3>Database Design</h3>
+      <p><strong>Original Artifact:</strong> [Describe database layout]</p>
+      <p><strong>Enhanced Artifact:</strong> [Discuss schema or query optimization]</p>
       <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
     </section>
 
-    <section id="code-review">
+    <section id="review">
       <h3>Code Review</h3>
-      <p><!-- Insert code snippet or video link with your review commentary --></p>
-      <p><a href="LINK_TO_REVIEW_VIDEO">Watch Review</a> (if applicable)</p>
+      <p>[Summarize what was reviewed, what you learned, and any corrections made]</p>
+      <p><a href="LINK_TO_CODE_REVIEW">View Code Review on GitHub</a></p>
     </section>
 
     <section id="outcomes">
-      <h3>Program Outcomes Reflection</h3>
-      <ul>
-        <li><strong>Software Engineering & Design:</strong> <!-- Reflection --> </li>
-        <li><strong>Algorithms & Data Structures:</strong> <!-- Reflection --> </li>
-        <li><strong>Databases:</strong> <!-- Reflection --> </li>
-        <li><strong>Security, Legal & Ethical:</strong> <!-- Reflection --> </li>
-        <li><strong>Professional Communication:</strong> <!-- Reflection --> </li>
-      </ul>
+      <h3>Program Outcomes</h3>
+      <p>[Reflect on how this project shows mastery of the program’s outcomes]</p>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Rasean Rhone | Built with HTML & GitHub Pages</p>
-  </footer>
 </body>
 </html>
