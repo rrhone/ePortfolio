@@ -109,3 +109,25 @@ body {
   50% { transform: translateY(10px); }
 }
 
+/* Make profile image larger */
+.hero-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+/* Make name larger */
+.hero-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Make subtitle/description larger */
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+}
