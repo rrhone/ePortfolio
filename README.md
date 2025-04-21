@@ -1,158 +1,65 @@
-# ePortfolio
 
-## About Me
-- Title: Computer Science Student, Senior
-- Education: Bachelor of Science in Computer Science (soon)
+# EZ Inventory Mobile App
 
-### Project
-- Description
-- Links
+An Android-based inventory management application built for my CS499 Capstone Project at Southern New Hampshire University.  
+This app is designed for small teams or individuals who need to track items, quantities, and updates in a local and role-aware system.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rasean Rhone | CS499 Capstone ePortfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #d8f3dc; /* Light green background */
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+## Features
 
-    header {
-      background-color: #081c15; /* Deep green */
-      color: #ffffff;
-      padding: 20px 40px;
-      text-align: center;
-    }
+- View a list of inventory items with name and quantity
+- Add, edit, and delete items (admin-only functionality)
+- Role-based login for admin and regular users
+- Real-time search bar for filtering inventory
+- Visual alerts for low-stock items
+- Audit trail logs all inventory changes with user role and timestamps
 
-    header h1 {
-      margin-bottom: 5px;
-    }
+## 🎯 Capstone Enhancements
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+This project was enhanced in three key areas to demonstrate core computer science competencies:
 
-    nav ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+### 1. Role-Based Access Control (Software Engineering & Security)
+- Added a `LoginActivity` to select role (Admin or User)
+- Used `SharedPreferences` to persist user role
+- Restricted access to add/edit/delete features for non-admin users
+- Shared logout/navigation menu using a custom `BaseActivity`
 
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
+### 2. Low-Stock Alerts + Real-Time Search (Algorithms & Data Structures)
+- Items with quantity less than 5 are visually flagged in the UI
+- Implemented a dynamic search bar for real-time filtering of inventory
+- Optimized RecyclerView updates for performance and usability
 
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+### 3. Inventory Audit Trail (Databases)
+- Added a new Room table `InventoryLog` to track all item changes
+- Each log stores: action type, item name, user role, and timestamp
+- Logs displayed in a dedicated screen for admin review
 
-    section {
-      margin-bottom: 40px;
-    }
+## Tech Stack
 
-    h3, h4 {
-      color: #1b4332;
-    }
+- **Language:** Java
+- **Database:** Room (SQLite abstraction)
+- **Architecture:** MVVM-lite with centralized `BaseActivity`
+- **Tools:** Android Studio, Git, GitHub
+- **Version Control:** Git with feature branches for enhancements
 
-    a {
-      color: #40916c;
-    }
+## 🧰 Tools & Installation
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #081c15;
-      color: #ffffff;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Rasean Rhone</h1>
-    <h2>CS499 Capstone ePortfolio</h2>
-    <nav>
-      <ul>
-        <li><a href="#overview">Professional Self-Assessment</a></li>
-        <li><a href="#software-design">Software Design & Engineering</a></li>
-        <li><a href="#algorithms">Algorithms & Data Structures</a></li>
-        <li><a href="#databases">Database Design</a></li>
-        <li><a href="#code-review">Code Review</a></li>
-        <li><a href="#outcomes">Program Outcomes</a></li>
-      </ul>
-    </nav>
-  </header>
+### 🔧 Required Software
 
-  <main>
-    <section id="overview">
-      <h3>Professional Self-Assessment</h3>
-      <p><!-- Describe your academic journey, skill development, and career goals. Include your growth in software engineering, problem solving, and professional responsibilities. --></p>
-    </section>
+| Tool | Description |
+|------|-------------|
+| [Android Studio](https://developer.android.com/studio) | Official IDE for Android development |
+| [Java SDK 8+](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) | Included in Android Studio |
+| [Git](https://git-scm.com/) | For cloning and version control |
+| Android Emulator or Device | Minimum API 21 (Android 5.0) |
 
-    <section id="software-design">
-      <h3>Software Design & Engineering</h3>
-      <h4>Original Artifact</h4>
-      <p><!-- Describe original version of the software design implementation --></p>
-      <h4>Enhanced Artifact</h4>
-      <p><!-- Describe enhancements you made (e.g., role-based access, modular architecture) --></p>
-      <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
-    </section>
 
-    <section id="algorithms">
-      <h3>Algorithms & Data Structures</h3>
-      <h4>Original Artifact</h4>
-      <p><!-- Describe the initial algorithmic problem you tackled --></p>
-      <h4>Enhanced Artifact</h4>
-      <p><!-- Describe improvements such as sorting, searching, or logic optimization --></p>
-      <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
-    </section>
+### 📦 Installation Steps
 
-    <section id="databases">
-      <h3>Database Design & Management</h3>
-      <h4>Original Artifact</h4>
-      <p><!-- Describe the original database schema or feature --></p>
-      <h4>Enhanced Artifact</h4>
-      <p><!-- Describe enhancements (e.g., Room persistence, audit trail, optimization) --></p>
-      <p><a href="LINK_TO_GITHUB_REPO">View Code on GitHub</a></p>
-    </section>
-
-    <section id="code-review">
-      <h3>Code Review</h3>
-      <p><!-- Insert code snippet or video link with your review commentary --></p>
-      <p><a href="LINK_TO_REVIEW_VIDEO">Watch Review</a> (if applicable)</p>
-    </section>
-
-    <section id="outcomes">
-      <h3>Program Outcomes Reflection</h3>
-      <ul>
-        <li><strong>Software Engineering & Design:</strong> <!-- Reflection --> </li>
-        <li><strong>Algorithms & Data Structures:</strong> <!-- Reflection --> </li>
-        <li><strong>Databases:</strong> <!-- Reflection --> </li>
-        <li><strong>Security, Legal & Ethical:</strong> <!-- Reflection --> </li>
-        <li><strong>Professional Communication:</strong> <!-- Reflection --> </li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Rasean Rhone | Built with HTML & GitHub Pages</p>
-  </footer>
-</body>
-</html>
-
+```bash
+# Clone the repository
+1. git clone https://github.com/rrhone/ePortfolio/ez-inventory.git
+2. cd ez-inventory
+3. Open the project in Android Studio
+4. Let Gradle sync and finish building the project
+5. Connect an emulator or Android device
+6. Click the green ▶ Run button
