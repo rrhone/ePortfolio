@@ -55,10 +55,11 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 
 ### Installation Steps
 
+1. Clone the repository
 ```bash
-# Clone the repository
-1. git clone https://github.com/rrhone/ePortfolio/ez-inventory.git
-2. cd ez-inventory
+   git clone https://github.com/rrhone/ePortfolio/ez-inventory.git
+   cd ez-inventory
+```
 3. Open the project in Android Studio
 4. Let Gradle sync and finish building the project
 5. Connect an emulator or Android device
