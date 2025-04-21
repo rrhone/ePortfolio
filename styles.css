@@ -133,6 +133,10 @@ a:hover {
   color: #d3f4c3;
 }
 
+.color {
+  color: #d3f4c3;
+}
+
 .scroll-up {
   position: fixed;
   right: 2rem;
