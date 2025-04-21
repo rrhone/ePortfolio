@@ -16,7 +16,7 @@ This repository contains my files and documents for development of my ePortfolio
 
 This project was enhanced in three key areas to demonstrate core computer science competencies:
 
-### 1. Role-Based Access Control (Software Engineering & Security)
+### 1. Role-Based Access Control (Software Design & Engineering)
 - Added a `LoginActivity` to select role (Admin or User)
 - Used `SharedPreferences` to persist user role
 - Restricted access to add/edit/delete features for non-admin users
