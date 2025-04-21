@@ -1,10 +1,19 @@
-
 # Capstone Project
+
+[![Generic badge](https://img.shields.io/badge/page_builder-GitHub_Pages-purple.svg)](https://pages.github.com/) [![Generic badge](https://img.shields.io/badge/language-Markdown_|_HTML-orange.svg)](https://www.markdownguide.org/) [![Generic badge](https://img.shields.io/badge/editor-Markdown_Monster-blue.svg)](https://markdownmonster.west-wind.com/) [![Generic badge](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 This repository contains my files and documents for development of my ePortfolio for my CS-499 Computer Science Capstone course final project. The creation of this professional portfolio showcases my skills, abilities, and strengths learned and grown throughout my Computer Science program at Southern New Hampshire University. I have selected a project to inmprove on and document my growth within the Computer Science Program by showcasing my knowledge and abilities in three categories: **Software Design & Engineering**, **Algorithms & Data Structure**, and **Databases**.
 
-## Features
+<div style="text-align: center;">
+    <a href="https://rrhone.github.io/ePortfolio" title="ePortfolio Home Page"><img src="https://img.shields.io/badge/Home-ePortfolio-cyan.svg?style=for-the-badge&logo=homeassistant" /></a>
+</div>
 
+---
+
+## EZ Inventory
+This is an Android-based inventory management application built during my time at Southern New Hampshire University. This app is designed for small teams or individuals who need to track items, quantities, and updates in a local and role-aware system.
+
+### Features
 - View a list of inventory items with name and quantity
 - Add, edit, and delete items (admin-only functionality)
 - Role-based login for admin and regular users
@@ -12,8 +21,9 @@ This repository contains my files and documents for development of my ePortfolio
 - Visual alerts for low-stock items
 - Audit trail logs all inventory changes with user role and timestamps
 
-## Capstone Enhancements
+---
 
+## Capstone Enhancements
 This project was enhanced in three key areas to demonstrate core computer science competencies:
 
 ### 1. Role-Based Access Control (Software Design & Engineering)
@@ -32,17 +42,20 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 - Each log stores: action type, item name, user role, and timestamp
 - Logs displayed in a dedicated screen for admin review
 
-## Tech Stack
+---
 
+## Tech Stack
 - **Language:** Java
 - **Database:** Room (SQLite abstraction)
 - **Architecture:** MVVM-lite with centralized `BaseActivity`
 - **Tools:** Android Studio, Git, GitHub
 - **Version Control:** Git with feature branches for enhancements
 
+---
+
 ## Tools & Installation
 
-### Required Software
+### Required Tools
 
 | Tool | Description |
 |------|-------------|
@@ -63,3 +76,5 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 4. Let Gradle sync and finish building the project
 5. Connect an emulator or Android device
 6. Click the green ▶ Run button
+
+---
