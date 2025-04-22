@@ -69,9 +69,6 @@
       </div>
     </div>
 
-<!-- Original Artifact -->
-<p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main" target="_blank">EZ Inventory pre-enhancement on main branch</a></p>
-
       
 <!-- SOFTWARE DESIGN -->
 <div id="design">
@@ -79,7 +76,7 @@
   <p>
     For my first enhancement, I focused on improving the security and structure of the EZ Inventory app by adding role-based access. In the original version, there was no login system and no way to control who could do what in the app—anyone who opened it could add, edit, or delete inventory items. That obviously wouldn’t work in a real-world situation, so I implemented Firebase Authentication and set up logic to separate admin users from regular users. Only admins can make changes to the inventory, while regular users can log in and just view items. I chose to include this enhancement because it shows my understanding of secure design and how to structure an app in a way that accounts for different user roles. It also demonstrates my ability to work with external tools like Firebase and apply them in a meaningful way. This enhancement supports a few key course outcomes like developing a security mindset, using well-established tools in computing, and adapting UI behavior for different audiences. One of the trickier parts of this enhancement was making sure role data passed correctly between screens and that only the right options showed up in the menu for each role. That challenge taught me how much attention to detail is required when building secure, user-aware software.
   </p>
-  <p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-1/original/src" target="_blank">CS 360 EZ Inventory pre-enhancement</a></p>
+  <p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-1/original/src" target="_blank">CS 360 EZ Inventory Mobile App</a></p>
   <p><strong>Enhanced Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-1/enhanced/src" target="_blank">Added role-based access control using Firebase Authentication</a></p>
 </div>
 
@@ -90,7 +87,7 @@
   <p>
     The second enhancement I made was all about improving how users interact with the inventory list. At first, the app just displayed a long scrollable list of items with no way to filter or flag important ones. That might be okay with a small inventory, but it quickly becomes a pain when you have more items to deal with. So, I added a real-time search bar that filters items as the user types, and I also implemented a low-stock alert that highlights any items with a quantity below five. These changes not only make the app easier to use, but they also demonstrate my ability to apply algorithmic thinking and work with data structures effectively. I selected this part of the app for enhancement because it gave me the chance to practice working with lists, dynamic filtering, and UI responsiveness—all skills that tie directly to the course outcome about algorithms and design trade-offs. While the logic itself wasn’t extremely complex, I had to make sure that the list updated efficiently and didn’t lag when users typed into the search bar. Figuring that out helped me better understand the relationship between data and UI performance. Overall, this enhancement is a great example of how small algorithmic changes can lead to a much better user experience.
   </p>
-  <p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-2/original/src" target="_blank">CS 360 EZ Inventory pre-enhancement</a></p>
+  <p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-2/original/src" target="_blank">CS 360 EZ Inventory Mobile App</a></p>
   <p><strong>Enhanced Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-2/enhanced/src" target="_blank">Implemented low-stock alerts and real-time search filtering</a></p>
 </div>
 
@@ -101,7 +98,7 @@
   <p>
     The last enhancement I made was replacing the local Room database with Firebase Firestore, which was probably the most impactful change in terms of scalability. Originally, the app used Room to store inventory data on the device itself. That worked fine for local testing, but it came with big limitations—data couldn’t be accessed across devices, and everything was lost if the app was uninstalled. To fix that, I migrated the entire inventory system to Firebase Firestore. This allowed me to store data in the cloud and made it accessible in real time from any device with an internet connection. I included this enhancement because it shows my ability to take a working prototype and push it toward a more realistic, production-ready state. It connects strongly to course outcomes like using modern tools and techniques in computing, supporting collaborative environments, and building systems that provide long-term value. I had to completely rewrite the logic for adding, editing, and deleting items to use Firestore’s API, and I also had to restructure my item model to match the way Firestore stores data. One of the challenges was making sure the UI stayed responsive and nothing broke during the switch, but once everything clicked, I felt way more confident working with cloud databases. This enhancement really pulled together everything I learned throughout the course.
   </p>
-  <p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-3/original/src" target="_blank">CS 360 EZ Inventory pre-enhancement</a></p>
+  <p><strong>Original Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-3/original/src" target="_blank">CS 360 EZ Inventory Mobile App</a></p>
   <p><strong>Enhanced Artifact:</strong> <a href="https://github.com/rrhone/ePortfolio/tree/main/enhancement-3/enhanced/src" target="_blank">Migrated from Room to Firebase Firestore</a></p>
 </div>
 
