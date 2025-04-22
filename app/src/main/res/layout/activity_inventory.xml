@@ -2,14 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search items..."
+        android:padding="12dp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="8dp"/>
 
     <!-- RecyclerView with actual height -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/searchEditText"
         android:layout_above="@+id/buttonContainer" />
+
 
     <!-- Button container to keep buttons anchored -->
     <LinearLayout
@@ -20,16 +33,21 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <Button
-            android:id="@+id/addItemButton"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Item"
-            android:textColor="@android:color/white"
-            android:backgroundTint="#2196F3" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="Add Item"
+            app:backgroundTint="@android:color/holo_green_dark"
+            app:tint="@android:color/white" />
+
 
         <Button
-            android:id="@+id/editItemButton"
+            android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit Item"
@@ -39,7 +57,7 @@
             android:layout_marginStart="16dp" />
 
         <Button
-            android:id="@+id/deleteItemButton"
+            android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete Item"
