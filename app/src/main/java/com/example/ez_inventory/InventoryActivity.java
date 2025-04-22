@@ -16,27 +16,38 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ez_inventory.adapters.InventoryAdapter;
-import com.example.ez_inventory.dao.ItemDao;
 import com.example.ez_inventory.data.Item;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class InventoryActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
     private InventoryAdapter inventoryAdapter;
-    private ItemDao inventoryItemDao;
     private FloatingActionButton addButton;
     private Button editButton;
     private Button deleteButton;
-
     private String userRole;
+    private FirebaseFirestore db;
+    private CollectionReference itemsRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
+
+        db = FirebaseFirestore.getInstance();
+        itemsRef = db.collection("items");
 
         EditText searchEditText = findViewById(R.id.searchEditText);
 
@@ -55,7 +66,7 @@ public class InventoryActivity extends BaseActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        Log.d("INVENTORY", "InventoryActivity started");
+        //Log.d("INVENTORY", "InventoryActivity started");
 
         userRole = getIntent().getStringExtra("userRole");
         boolean isAdmin = "admin".equals(userRole);
@@ -64,16 +75,13 @@ public class InventoryActivity extends BaseActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Set up DAO
-        inventoryItemDao = AppDatabase.getDatabase(this).inventoryItemDao();
-
-        // Find buttons
+        // CRUD buttons
         addButton = findViewById(R.id.addButton);
         deleteButton = findViewById(R.id.deleteButton);
         editButton = findViewById(R.id.editButton);
         editButton.setVisibility(View.GONE);
 
-        Log.d("USER_ROLE", "Logged in as: " + userRole);
+        //Log.d("USER_ROLE", "Logged in as: " + userRole);
 
         // Hide buttons for non-admins
         if (isAdmin) {
@@ -102,14 +110,17 @@ public class InventoryActivity extends BaseActivity {
                         .setTitle("Confirm Deletion")
                         .setMessage("Are you sure you want to delete \"" + itemToDelete.getName() + "\"?")
                         .setPositiveButton("Delete", (dialog, which) -> {
-                            new Thread(() -> {
-                                inventoryItemDao.delete(itemToDelete);
-                                runOnUiThread(() -> {
-                                    Toast.makeText(this, "Item deleted", Toast.LENGTH_SHORT).show();
-                                    reloadItems();
-                                    editButton.setVisibility(View.GONE);
-                                });
-                            }).start();
+                            db.collection("items").document(itemToDelete.getId())
+                                    .delete()
+                                    .addOnSuccessListener(aVoid -> {
+                                        Toast.makeText(this, "Item deleted", Toast.LENGTH_SHORT).show();
+                                        reloadItems();
+                                        editButton.setVisibility(View.GONE);
+                                        addButton.setVisibility(View.VISIBLE); // optional if using FAB
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(this, "Delete failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    });
                         })
                         .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
                         .show();
@@ -172,29 +183,27 @@ public class InventoryActivity extends BaseActivity {
     }
 
     private void reloadItems() {
-        new Thread(() -> {
-            try {
-                List<Item> itemList = inventoryItemDao.getAllItems();
-                Log.d("INVENTORY", "Number of items inventory: " + itemList.size());
-
-                runOnUiThread(() -> {
-                    inventoryAdapter = new InventoryAdapter(itemList);
-                    recyclerView.setAdapter(inventoryAdapter);
-
-                    inventoryAdapter.setOnItemSelectedListener(selectedItem -> {
-                        if ("admin".equals(userRole)) {
-                            editButton.setVisibility(selectedItem != null ? View.VISIBLE : View.GONE);
-                        }
-                    });
-
-                    recyclerView.setAdapter(inventoryAdapter);
-                });
-            } catch (Exception e) {
-                Log.e("INVENTORY", "Error loading items: " + e.getMessage());
-                runOnUiThread(() ->
-                        Toast.makeText(this, "Failed to load items", Toast.LENGTH_SHORT).show()
-                );
+        itemsRef.get().addOnSuccessListener(queryDocumentSnapshots -> {
+            List<Item> itemList = new ArrayList<>();
+            for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                Item item = doc.toObject(Item.class);
+                item.setId(doc.getId()); // Capture Firestore document ID
+                itemList.add(item);
             }
-        }).start();
+
+            inventoryAdapter = new InventoryAdapter(itemList);
+            recyclerView.setAdapter(inventoryAdapter);
+
+            inventoryAdapter.setOnItemSelectedListener(selectedItem -> {
+                if ("admin".equals(userRole)) {
+                    editButton.setVisibility(selectedItem != null ? View.VISIBLE : View.GONE);
+                }
+            });
+
+        }).addOnFailureListener(e -> {
+            Log.e("INVENTORY", "Error loading items: " + e.getMessage());
+            Toast.makeText(this, "Failed to load items", Toast.LENGTH_SHORT).show();
+        });
     }
+
 }
