@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EZ Inventory</string>
+    <string name="add_item">Add Item</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Log In</string>
+    <string name="register_button">Register</string>
+</resources>
