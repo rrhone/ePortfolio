@@ -13,11 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ez_inventory.R;
 import com.example.ez_inventory.data.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.ViewHolder> {
     private List<Item> itemList; // List of inventory items
     private Item selectedItem;
+    private List<Item> fullItemList;
 
     public interface OnItemSelectedListener {
         void onItemSelected(Item selectedItem);
@@ -32,6 +34,22 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
     public InventoryAdapter(List<Item> itemList) {
         this.itemList = itemList;
+        this.fullItemList = new ArrayList<>(itemList); // Backup copy
+    }
+
+    public void filterList(String query) {
+        if (query == null || query.trim().isEmpty()) {
+            itemList = new ArrayList<>(fullItemList);
+        } else {
+            List<Item> filtered = new ArrayList<>();
+            for (Item item : fullItemList) {
+                if (item.getName().toLowerCase().contains(query.toLowerCase())) {
+                    filtered.add(item);
+                }
+            }
+            itemList = filtered;
+        }
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -47,9 +65,20 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // Bind data to ViewHolder
         Item item = itemList.get(position);
-        Log.d("ADAPTER", "Binding item: " + item.getName() + " (" + item.getQuantity() + ")");
         holder.itemName.setText(item.getName());
-        holder.itemQuantity.setText("Quantity: " + item.getQuantity());
+
+        int quantity = item.getQuantity();
+        holder.itemQuantity.setText("Quantity: " + quantity);
+
+        // Low-stock visual alert
+        if (quantity < 5) {
+            holder.itemQuantity.setTextColor(Color.RED);
+            holder.itemQuantity.setTypeface(null, android.graphics.Typeface.BOLD);
+        } else {
+            holder.itemQuantity.setTextColor(Color.BLACK);
+            holder.itemQuantity.setTypeface(null, android.graphics.Typeface.NORMAL);
+        }
+
 
         holder.itemView.setBackgroundColor(
                 item.equals(selectedItem) ? Color.LTGRAY : Color.TRANSPARENT
@@ -66,12 +95,6 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
             }
             notifyDataSetChanged();
         });
-
-        /*holder.deleteButton.setOnClickListener(v -> {
-            item.delete(item); // Delete item from the database
-            itemList.remove(position); // Remove item from the list
-            notifyItemRemoved(position); // Notify adapter about item removal
-        });*/
     }
 
     @Override
@@ -82,13 +105,11 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView itemName; // TextView for item name
         TextView itemQuantity; // TextView for item quantity
-        //Button deleteButton; // Button to delete item
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemName = itemView.findViewById(R.id.itemName);
             itemQuantity = itemView.findViewById(R.id.itemQuantity);
-            //deleteButton = itemView.findViewById(R.id.deleteButton); // Initialize delete button
             itemView.setBackgroundColor(Color.TRANSPARENT);
         }
     }

@@ -2,10 +2,13 @@ package com.example.ez_inventory;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import android.view.MenuItem;
 
@@ -34,6 +37,23 @@ public class InventoryActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
+
+        EditText searchEditText = findViewById(R.id.searchEditText);
+
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (inventoryAdapter != null) {
+                    inventoryAdapter.filterList(s.toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
 
         Log.d("INVENTORY", "InventoryActivity started");
 
@@ -159,6 +179,7 @@ public class InventoryActivity extends BaseActivity {
 
                 runOnUiThread(() -> {
                     inventoryAdapter = new InventoryAdapter(itemList);
+                    recyclerView.setAdapter(inventoryAdapter);
 
                     inventoryAdapter.setOnItemSelectedListener(selectedItem -> {
                         if ("admin".equals(userRole)) {
