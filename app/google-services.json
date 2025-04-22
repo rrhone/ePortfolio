@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "833757420745",
+    "project_id": "ezinventory-88801",
+    "storage_bucket": "ezinventory-88801.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833757420745:android:b4833e0df0e9dbf1a70118",
+        "android_client_info": {
+          "package_name": "com.example.ez_inventory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAan5zdxVodQnWFSyuyEHaI6PrJqo-pN7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
