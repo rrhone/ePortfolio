@@ -46,7 +46,8 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 
 ## Tech Stack
 - **Language:** Java
-- **Database:** Room (SQLite abstraction)
+- **Database:** Room (SQLite abstr
+- **Backend Services:** Firebase Authentication, Firebase Firestoreaction)
 - **Architecture:** MVVM-lite with centralized `BaseActivity`
 - **Tools:** Android Studio, Git, GitHub
 - **Version Control:** Git with feature branches for enhancements
@@ -56,17 +57,17 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 ## Tools & Installation
 
 ### Required Tools
-
 | Tool | Description |
 |------|-------------|
 | [Android Studio](https://developer.android.com/studio) | Official IDE for Android development |
 | [Java SDK 8+](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) | Included in Android Studio |
 | [Git](https://git-scm.com/) | For cloning and version control |
 | Android Emulator or Device | Minimum API 21 (Android 5.0) |
+| [Firebase Console](https://console.firebase.google.com/) | Used for user authentication and storing user roles |
 
+---
 
 ### Installation Steps
-
 1. Clone the repository
 ```bash
    git clone https://github.com/rrhone/ePortfolio/ez-inventory.git
@@ -76,5 +77,12 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 4. Let Gradle sync and finish building the project
 5. Connect an emulator or Android device
 6. Click the green ▶ Run button
+
+### Firebase Setup
+To enable Firebase Auth and Firestore in your local build:
+1. Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/)
+2. Register your Android app and download the `google-services.json` file
+3. Place `google-services.json` in the `app/` directory of the project
+4. Make sure Firebase services are enabled in your `build.gradle` files
 
 ---
