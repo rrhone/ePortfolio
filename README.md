@@ -19,7 +19,6 @@ This is an Android-based inventory management application built during my time a
 - Role-based login for admin and regular users
 - Real-time search bar for filtering inventory
 - Visual alerts for low-stock items
-- Audit trail logs all inventory changes with user role and timestamps
 
 ---
 
@@ -27,27 +26,28 @@ This is an Android-based inventory management application built during my time a
 This project was enhanced in three key areas to demonstrate core computer science competencies:
 
 ### 1. Role-Based Access Control (Software Design & Engineering)
-- Added a `LoginActivity` to select role (Admin or User)
-- Used `SharedPreferences` to persist user role
-- Restricted access to add/edit/delete features for non-admin users
-- Shared logout/navigation menu using a custom `BaseActivity`
+- Integrated Firebase Authentication to securely manage user login and registration
+- Implemented role selection (Admin or User) at account creation using Firestore to persist roles
+- Restricted access to sensitive features like adding, editing, or deleting items based on user role
+- Dynamically adjusted navigation and menu options through a shared BaseActivity to reflect the logged-in user's role
 
-### 2. Low-Stock Alerts + Real-Time Search (Algorithms & Data Structures)
-- Items with quantity less than 5 are visually flagged in the UI
-- Implemented a dynamic search bar for real-time filtering of inventory
+### 2. Low-Stock Alerts w/ Real-Time Search (Algorithms & Data Structures)
+- Items with quantity below 5 are visually flagged in the UI
+- Implemented a dynamic search bar for real-time filtering inventory items
 - Optimized RecyclerView updates for performance and usability
 
-### 3. Inventory Audit Trail (Databases)
-- Added a new Room table `InventoryLog` to track all item changes
-- Each log stores: action type, item name, user role, and timestamp
-- Logs displayed in a dedicated screen for admin review
+### 3. Firebase Firestore Integration (Databases)
+- Replaced the local Room database with Firebase Firestore for real-time, cloud-based data storage
+- Updated all CRUD operations to work with Firestore collections and documents
+- Ensured seamless data sync across devices with Firestore’s real-time listeners
+- Simplified future scalability and remote access to inventory data
 
 ---
 
 ## Tech Stack
 - **Language:** Java
 - **Database:** Room (SQLite abstr
-- **Backend Services:** Firebase Authentication, Firebase Firestoreaction)
+- **Backend Services:** Firebase Authentication, Firebase Firestore)
 - **Architecture:** MVVM-lite with centralized `BaseActivity`
 - **Tools:** Android Studio, Git, GitHub
 - **Version Control:** Git with feature branches for enhancements
@@ -63,7 +63,7 @@ This project was enhanced in three key areas to demonstrate core computer scienc
 | [Java SDK 8+](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) | Included in Android Studio |
 | [Git](https://git-scm.com/) | For cloning and version control |
 | Android Emulator or Device | Minimum API 21 (Android 5.0) |
-| [Firebase Console](https://console.firebase.google.com/) | Used for user authentication and storing user roles |
+| [Firebase Console](https://console.firebase.google.com/) | Used for user authentication; storage for user roles and inventory data |
 
 ---
 
